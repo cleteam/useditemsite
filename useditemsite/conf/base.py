@@ -12,10 +12,10 @@ TEMPLATE_DIRS = (
 MEDIA_ROOT          = SITE_ROOT + '/media/'
 MEDIA_URL           = '/media/'
 
-STATIC_ROOT         = SITE_ROOT + '/static/'
-STATIC_URL          = '/static/'
+#STATIC_ROOT         = SITE_ROOT + '/static/'
+#STATIC_URL          = '/static/'
 
-ADMIN_MEDIA_PREFIX  = '/static/admin/media/'
+#ADMIN_MEDIA_PREFIX  = '/static/admin/media/'
 
 MESSAGE_STORAGE     = 'django.contrib.messages.storage.session.SessionStorage'
 
@@ -52,10 +52,9 @@ MIDDLEWARE_CLASSES = (
 
 INSTALLED_APPS = (
     'apps.account',
-    'apps.contact',
-    'apps.intro',
-    'apps.man',
-    'apps.train',
+    'apps.activity',
+    'apps.blog',
+    'apps.main',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -98,22 +97,10 @@ from django.template.loader import add_to_builtins
 add_to_builtins("django.templatetags.i18n")
 add_to_builtins("lib.utils")
 
-'''
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': '127.0.0.1:11211'
-    }
-}
-'''
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        #"NAME": "giangday_moodledb",
-        #"USER": "giangday_root",
-        #"PASSWORD": "2tdp22ler@X",
-        "NAME": "moodledb",
+        "NAME": "useditemsite",
         "USER": "root",
         "PASSWORD": "root",
         "HOST": "localhost",
@@ -121,16 +108,13 @@ DATABASES = {
     },
     "readonly": {
         "ENGINE": "django.db.backends.mysql",
-        #"NAME": "giangday_moodledb",
-        #"USER": "giangday_root",
-        #"PASSWORD": "2tdp22ler@X",
-        "NAME": "moodledb",
+        "NAME": "useditemsite",
         "USER": "root",
         "PASSWORD": "root",        
         "HOST": "localhost",
         "PORT": "3306",
         "TEST_MIRROR": "default",
-    },
+    },             
 }
 
-AUTH_PROFILE_MODULE = 'accounts.UserProfile'
+#AUTH_PROFILE_MODULE = 'accounts.UserProfile'

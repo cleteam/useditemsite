@@ -6,7 +6,7 @@ from apps.activity.models       import Event
 class Org(models.Model):
     name        = models.CharField(max_length=50)
     description = models.CharField(max_length=500)
-    image       = models.ImageField()
+    image       = models.ImageField(upload_to="events/%Y/%m/%d")
     address     = models.CharField(max_length=150)
     district    = models.ForeignKey(District)    
     city        = models.ForeignKey(City)
@@ -21,7 +21,7 @@ class Post(models.Model):
     user        = models.ForeignKey(User)
     title       = models.CharField(max_length=80)
     description = models.CharField(max_length=500)
-    image       = models.ImageField()
+    image       = models.ImageField(upload_to="events/%Y/%m/%d")
     org         = models.ForeignKey(Org, null=True)
     event       = models.ForeignKey(Event, null=True)
     active      = models.BooleanField(default=True)
