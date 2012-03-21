@@ -43,3 +43,11 @@ class Recipient(models.Model):
     created_at  = models.DateTimeField(auto_now_add=True)
     updated_by  = models.IntegerField()
     updated_at  = models.DateTimeField(auto_now_add=True)    
+    
+class RecipientLog(models.Model):
+    user            = models.ForeignKey(User)
+    useditem_count  = models.IntegerField()
+    created_by      = models.IntegerField()
+    created_at      = models.DateTimeField(auto_now_add=True)
+    updated_by      = models.IntegerField()
+    updated_at      = models.DateTimeField(auto_now_add=True)    
