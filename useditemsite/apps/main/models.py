@@ -17,8 +17,17 @@ class District(models.Model):
     created_at  = models.DateTimeField(auto_now_add=True)
     updated_by  = models.IntegerField()
     updated_at  = models.DateTimeField(auto_now_add=True)    
+
+class Category(models.Model):
+    name        = models.CharField(max_length=30)
+    active      = models.BooleanField(default=True)
+    created_by  = models.IntegerField()
+    created_at  = models.DateTimeField(auto_now_add=True)
+    updated_by  = models.IntegerField()
+    updated_at  = models.DateTimeField(auto_now_add=True)
     
 class UsedItem(models.Model):
+    category    = models.ForeignKey(Category)
     user        = models.ForeignKey(User)
     title       = models.CharField(max_length=150)
     description = models.CharField(max_length=300)
