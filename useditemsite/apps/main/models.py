@@ -39,6 +39,7 @@ class UsedItem(models.Model):
     district    = models.ForeignKey(District)
     city        = models.ForeignKey(City)
     phone       = models.CharField(max_length=20, null=True)
+    expired_at  = models.DateTimeField(null=True)
     created_by  = models.IntegerField()
     created_at  = models.DateTimeField(auto_now_add=True)
     updated_by  = models.IntegerField()
